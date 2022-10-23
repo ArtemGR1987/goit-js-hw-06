@@ -1,3 +1,4 @@
+"use strict";
 let counterValue = document.querySelector("#value");
 
 const decrementBtnEl = document.querySelector(
