@@ -1,20 +1,15 @@
 "use strict";
-let counterValue = document.querySelector("#value");
+const incrementBtnEl = document.querySelector(`[data-action="increment"]`);
+const decrementBtnEl = document.querySelector(`[data-action="decrement"]`);
+const spunEl = document.querySelector(`#value`);
+let counterValue = 0;
 
-const decrementBtnEl = document.querySelector(
-  'button[data-action="decrement"]'
-);
-const incrementBtnEl = document.querySelector(
-  'button[data-action="increment"]'
-);
+incrementBtnEl.addEventListener(`click`, () => {
+  counterValue += 1;
+  spunEl.textContent = counterValue;
+});
 
-const increment = () => {
-  counterValue.textContent = Number(counterValue.textContent) + 1;
-};
-
-const decrement = () => {
-  counterValue.textContent = Number(counterValue.textContent) - 1;
-};
-
-decrementBtnEl.addEventListener("click", decrement);
-incrementBtnEl.addEventListener("click", increment);
+decrementBtnEl.addEventListener(`click`, () => {
+  counterValue -= 1;
+  spunEl.textContent = counterValue;
+});
